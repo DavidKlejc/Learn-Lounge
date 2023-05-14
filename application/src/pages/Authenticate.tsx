@@ -3,13 +3,14 @@ import { supabase } from "../lib/api";
 import { Session } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Authenticate = () => {
   const [session, setSession] = useState<Session | null>();
   const navigate = useNavigate();
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
+      navigate("/sets");
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
@@ -18,14 +19,10 @@ const Login = () => {
   }, []);
 
   const signInWithGoogle = async () => {
-    try {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-      });
-      if (error) throw error;
-    } catch (error: any) {
-      throw error;
-    }
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+    if (error) throw error;
   };
 
   const signOut = async () => {
@@ -33,15 +30,15 @@ const Login = () => {
     if (error) throw error;
   };
 
-  if (session) navigate("/home");
-
   return (
     <>
       {!session ? (
         <button onClick={signInWithGoogle}>Sign in with Google</button>
-      ) : null}
+      ) : (
+        <button onClick={signOut}>Sign Out</button>
+      )}
     </>
   );
 };
 
-export default Login;
+export default Authenticate;

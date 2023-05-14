@@ -1,33 +1,27 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from "./pages/Home";
+import Sets from "./pages/Sets";
 import { AuthProvider } from "./hooks/Auth";
-import Login from "./pages/Login";
+import Nav from "./components/Nav";
 
 const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <Nav />
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route
-            path="/"
+            path="/sets"
             element={
               <ProtectedRoute>
-                <LandingPage />
+                <Sets />
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/home"
-            element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
