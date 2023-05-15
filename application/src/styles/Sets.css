@@ -1,0 +1,25 @@
+.set-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, 425px);
+  justify-content: center;
+  margin-bottom: 35px;
+  padding: 0;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+
+/* Styles for mobile screens */
+@media only screen and (max-width: 600px) {
+  .set-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+  }
+}
