@@ -14,7 +14,7 @@ const Authenticate = () => {
   return (
     <>
       {!session ? (
-        <button onClick={handleSignIn}>Sign in with Google</button>
+        <button onClick={handleSignIn}>Sign In</button>
       ) : (
         <button onClick={handleSignOut}>Sign Out</button>
       )}

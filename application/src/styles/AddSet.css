@@ -1,0 +1,34 @@
+.add-set-card {
+  display: block;
+  width: 390px;
+  height: 150px;
+  border: 1px dashed;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  background-color: #05203e;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  line-height: 150px;
+}
+
+.add-set-card:hover {
+  border-color: white;
+}
+
+.add-set-card:visited {
+  text-decoration: none;
+}
+
+/* Styles for mobile screens */
+@media only screen and (max-width: 600px) {
+  .add-set-card {
+    display: block;
+    width: 270px;
+    height: 160px;
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    background-color: #05203e;
+  }
+}

@@ -1,22 +1,27 @@
 import { NavLink } from "react-router-dom";
-import Authenticate from "../pages/Authenticate";
+import Authenticate from "./Authenticate";
 import { useAuth } from "../hooks/Auth";
+import "../styles/Nav.css";
 
 const Nav = () => {
   const { session } = useAuth();
 
   return (
-    <div className="navbar">
-      <NavLink to={"/"} className="nav-item">
-        Home
-      </NavLink>
-      {session && (
-        <NavLink to={"/sets"} className="nav-item">
-          Sets
+    <header>
+      <div className="nav-left">
+        <NavLink to={"/"} className="nav-left-item">
+          Learn Lounge
         </NavLink>
-      )}
-      <Authenticate />
-    </div>
+        {session && (
+          <NavLink to={"/sets"} className="nav-left-item">
+            Sets
+          </NavLink>
+        )}
+      </div>
+      <div className="nav-right">
+        <Authenticate />
+      </div>
+    </header>
   );
 };
 
