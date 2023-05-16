@@ -5,6 +5,8 @@ import Sets from "./pages/Sets";
 import { AuthProvider } from "./hooks/Auth";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import CreateSet from "./pages/CreateSet";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -21,6 +23,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/create-set"
+            element={
+              <ProtectedRoute>
+                <CreateSet />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </AuthProvider>
