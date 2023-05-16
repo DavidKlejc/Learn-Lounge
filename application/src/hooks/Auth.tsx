@@ -31,6 +31,8 @@ export const AuthProvider = ({ children }: any) => {
       setSession(session);
       setUser(session?.user);
       setLoading(false);
+      console.log("here");
+      navigate("/sets");
     };
 
     const { data: listener } = supabase.auth.onAuthStateChange(
@@ -48,13 +50,13 @@ export const AuthProvider = ({ children }: any) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (session?.user) {
-      navigate("/sets", { replace: true });
-    } else {
-      navigate("/");
-    }
-  }, [session?.user]);
+  // useEffect(() => {
+  //   if (session?.user) {
+  //     navigate("/sets");
+  //   } else {
+  //     navigate("/");
+  //   }
+  // }, [session?.user]);
 
   const signOut = async () => {
     await supabase.auth.signOut();
@@ -66,7 +68,6 @@ export const AuthProvider = ({ children }: any) => {
       provider: "google",
     });
     if (error) throw error;
-    console.log("here");
   };
 
   const value = {
