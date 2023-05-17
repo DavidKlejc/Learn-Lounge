@@ -16,10 +16,35 @@
 
 textarea,
 input {
-  background-color: #0f2d4c;
+  background-color: #041c34;
   color: #d9dde8;
   padding: 10px;
   border: 1px solid #ccc;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.enter-set-name-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.enter-set-name-container p {
+  width: 70%;
+  text-align: start;
+  margin: 0;
+  color: red;
+  font-size: 12px;
+}
+
+.create-flashcard p {
+  width: 70%;
+  text-align: start;
+  margin: 0;
+  color: red;
 }
 
 .enter-set-input {
@@ -27,7 +52,11 @@ input {
   height: 20px;
   outline: none;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: none;
+}
+
+.enter-set-input:focus {
+  border: 2px solid #3ccfcf;
 }
 
 .create-flashcard-header {
@@ -42,7 +71,7 @@ input {
 }
 
 .create-flashcard {
-  padding: 10px;
+  padding: 5px 10px 20px 10px;
   background-color: #041c34;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -53,9 +82,23 @@ input {
   width: 70%;
 }
 
+.create-term-container,
+.create-definition-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.create-term-container p,
+.create-definition-container p {
+  font-size: 12px;
+  width: 100%;
+  margin: 0;
+  align-self: flex-start;
+}
+
 .create-term,
 .create-definition {
-  flex-grow: 1;
   border: none;
   border-bottom: 1px solid #fff;
   resize: none;
@@ -66,6 +109,8 @@ input {
 .create-definition:focus {
   outline: none;
   border-bottom: 2px solid #3ccfcf;
+  outline: none;
+  box-shadow: none;
 }
 
 .create-flashcard button {
@@ -88,7 +133,6 @@ input {
   color: grey;
 }
 
-/* Styles for mobile screens */
 @media only screen and (max-width: 600px) {
   .create-flashcard {
     padding: 10px;
