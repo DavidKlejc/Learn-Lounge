@@ -1,0 +1,46 @@
+/* .flashcard {
+  width: min(90%, 780px);
+  height: min(90%, 430px);
+  background-color: darkgoldenrod;
+  margin-inline: auto;
+} */
+
+.flashcard {
+  width: min(90%, 780px);
+  height: min(90%, 430px);
+  background-color: darkgoldenrod;
+  margin-inline: auto;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flashcard:hover {
+  cursor: pointer;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: #031b34;
+}
+
+.back {
+  background-color: #031b34;
+  transform: rotateX(180deg);
+}
+
+.flipped {
+  transform: rotateX(180deg);
+}

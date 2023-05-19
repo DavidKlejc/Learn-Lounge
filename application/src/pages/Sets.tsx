@@ -44,7 +44,7 @@ const Sets = () => {
         ) : sets.length ? (
           <>
             {sets.map((set) => (
-              <StudySet key={set.id} setName={set.name} />
+              <StudySet setId={set.id} setName={set.name} />
             ))}
             <AddSet />
           </>

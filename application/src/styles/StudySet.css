@@ -9,6 +9,12 @@
   border-radius: 25px;
   background-color: #05203e;
   padding: 15px;
+  transition: border 0.3s ease;
+}
+
+.study-set-card:hover {
+  cursor: pointer;
+  border: 1px solid white;
 }
 
 /* Styles for mobile screens */
