@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import CreateSet from "./pages/CreateSet";
 import NotFound from "./pages/NotFound";
+import Set from "./pages/Set";
 
 const App = () => {
   return (
@@ -28,6 +29,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <CreateSet />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/set/:id"
+            element={
+              <ProtectedRoute>
+                <Set />
               </ProtectedRoute>
             }
           />

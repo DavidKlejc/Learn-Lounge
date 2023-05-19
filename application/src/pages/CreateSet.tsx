@@ -46,8 +46,6 @@ const CreateSet = () => {
   });
 
   const onSubmit: SubmitHandler<IFormData> = async (data: IFormData) => {
-    console.log(data);
-    console.log(user?.id);
     if (user) {
       const { data: setData, error } = await supabase
         .from("sets")
@@ -57,7 +55,6 @@ const CreateSet = () => {
       if (error) {
         console.error(error);
       } else {
-        console.log(setData);
         const setId = setData[0].id;
         const flashcardData = data.flashcards.map((flashcard) => ({
           setId,
@@ -73,7 +70,6 @@ const CreateSet = () => {
         if (flashcardsError) {
           console.error(flashcardsError);
         } else {
-          console.log("Flashcards inserted successfully");
           setIsSubmitting(false);
           navigate("/sets");
         }
