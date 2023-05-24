@@ -60,6 +60,7 @@ const CreateSet = () => {
           setId,
           term: flashcard.term,
           definition: flashcard.definition,
+          userId: user.id,
         }));
 
         setIsSubmitting(true);
