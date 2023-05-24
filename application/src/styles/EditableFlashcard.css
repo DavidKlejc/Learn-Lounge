@@ -1,0 +1,125 @@
+.vertical-divider {
+  width: 2px;
+  background-color: #282e3e;
+}
+
+.edit-flashcard {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-divider {
+  height: 2px;
+  background-color: #052445;
+}
+
+.edit-flashcard-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  background-color: #041c34;
+}
+
+.index-container {
+  text-align: start;
+}
+
+.flashcard-nav-index-container {
+  width: 50px;
+  user-select: none;
+}
+
+.term-and-definition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+  background-color: #041c34;
+}
+
+.edit-and-delete-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.edit-term-container,
+.edit-definition-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.edit-term-container p,
+.edit-definition-container p {
+  font-size: 12px;
+  width: 100%;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.edit-term,
+.edit-definition {
+  border: none;
+  resize: none;
+  background-color: #041c34;
+}
+
+.edit-term:focus,
+.edit-definition:focus {
+  outline: none;
+  border-bottom: 2px solid #3ccfcf;
+  outline: none;
+  box-shadow: none;
+}
+
+.edit-term-active,
+.edit-definition-active {
+  border: none;
+  border-bottom: 1px solid #fff;
+  resize: none;
+  background-color: #041c34;
+}
+
+.edit-term-active:focus,
+.edit-definition-active:focus {
+  outline: none;
+  border-bottom: 2px solid #3ccfcf;
+  outline: none;
+  box-shadow: none;
+}
+
+.edit-button-container:hover,
+.save-button-container:hover {
+  cursor: pointer;
+}
+
+.edit-button-container-disabled:hover {
+  cursor: default;
+}
+
+.save-button-container,
+.edit-button-container {
+  color: grey;
+}
+
+.save-button-container:hover,
+.edit-button-container:hover {
+  color: white;
+}
+
+.errors {
+  color: red;
+}
+
+/* Styles for mobile screens */
+@media only screen and (max-width: 600px) {
+  .term-and-definition-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -48,7 +48,9 @@ const Sets = () => {
             ))}
             <AddSet />
           </>
-        ) : null}
+        ) : (
+          <AddSet />
+        )}
       </div>
       <Outlet />
     </main>

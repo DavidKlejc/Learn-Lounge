@@ -1,13 +1,8 @@
-/* .flashcard {
-  width: min(90%, 780px);
-  height: min(90%, 430px);
-  background-color: darkgoldenrod;
-  margin-inline: auto;
-} */
-
 .flashcard {
   width: min(90%, 780px);
   height: min(90%, 430px);
+  min-height: 430px;
+  margin-bottom: 20px;
   background-color: darkgoldenrod;
   margin-inline: auto;
   position: relative;

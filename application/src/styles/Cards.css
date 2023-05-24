@@ -1,0 +1,56 @@
+.flashcard-set-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+}
+
+.flashcards-container {
+  min-height: 500px;
+  width: min(90%, 2000px);
+  margin-inline: auto;
+}
+
+.flashcard-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  width: min(90%, 780px);
+  height: min(90%, 50px);
+  margin-inline: auto;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-button-disabled {
+  cursor: default;
+  color: grey;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  cursor: pointer;
+}
+
+.save-button-container button {
+  all: unset;
+}
+
+.save-button-container button:hover {
+  all: unset;
+}
+
+.divider {
+  background-color: #282e3e;
+  width: min(90%, 780px);
+  height: min(90%, 2px);
+  margin-inline: auto;
+  margin-bottom: 20px;
+}
